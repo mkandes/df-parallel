@@ -3,24 +3,18 @@ name: df-parallel-gpu
 channels:
   - rapidsai
   - conda-forge
-  - nvidia
-  - anaconda
 
 dependencies:
-  - python=3.10
-  - jupyterlab=4.0.1
-  - ipywidgets=8.0.6
-  - matplotlib=3.7.1
-  - seaborn=0.12.2
-  - papermill=2.3.4
-  - dask=2023.3.2
-  - pyspark=3.4.0
-  - pyarrow=10.0.1
-  - openjdk=17.0.3
-  - cudf=23.04
-  - dask-cudf=23.04.01
-  - cudatoolkit=11.8
-
+  - cudf=26.06.01
+  - dask-cudf=26.06.01
+  - pyspark=4.1.2 
+  - openjdk=21.0.10
+  - matplotlib
+  - seaborn
+  - papermill
+  - jupyterlab
+  - ipywidgets
+  
 variables:
   # SPARK conf directory with logging configuration
   SPARK_CONF_DIR: ../conf

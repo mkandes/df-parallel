@@ -58,18 +58,18 @@ To launch Jupyter Lab on [Expanse](https://www.sdsc.edu/services/hpc/expanse/), 
 1. Clone this git repository
 
 ```
-git clone https://github.com/sbl-sdsc/df-parallel.git
+git clone https://github.com/mkandes/df-parallel.git
 ```
 
 
 2a. Run on CPU (Pandas, Dask, and Spark dataframes):
 ```
-galyleo launch --account <account_number> --partition shared --cpus 10 --memory 20 --time-limit 00:30:00 --conda-env df-parallel --conda-yml "${HOME}/df-parallel/environment.yml" --mamba
+galyleo launch --account abc123 --partition shared --cpus 10 --memory 20 --time-limit 00:30:00 --conda-yml "${HOME}/df-parallel/environment.yml" --cache --quiet
 ```
 
 2b. Run on GPU (required for cuDF and Dask-cuDF dataframes):
 ```
-galyleo launch --account <account_number> --partition gpu-shared --cpus 10 --memory 92 --gpus 1 --time-limit 00:30:00 --conda-env df-parallel-gpu --conda-yml "${HOME}/df-parallel/environment-gpu.yml" --mamba
+galyleo launch --account abc123 --partition gpu-shared --cpus 10 --memory 92 --gpus 1 --time-limit 00:30:00 --conda-yml "${HOME}/df-parallel/environment-gpu.yml" --cache --quiet
 ```
 
 ## Running the example notebooks

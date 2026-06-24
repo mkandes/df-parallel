@@ -16,21 +16,19 @@ It compares parallel and out-of-core (data that are too large to fit into the co
 
 ## Running Jupyter Lab locally (CPU only)
 ------
-Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
-
-* Install [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
-* Install Mamba: ```conda install mamba -n base -c conda-forge```
+Prerequisites: miniforge (light-weight, preferred)
+* Download and install [miniforge](https://conda-forge.org/download/)
 ------
 
 1. Clone this git repository
 
 ```
-git clone https://github.com/sbl-sdsc/df-parallel.git
+git clone https://github.com/mkandes/df-parallel.git
 ```
 2. Create CONDA environment
 
 ```
-mamba env create -f df-parallel/environment.yml
+conda env create -f df-parallel/environment.yml
 ```
 3. Activate the CONDA environment
 
@@ -60,18 +58,18 @@ To launch Jupyter Lab on [Expanse](https://www.sdsc.edu/services/hpc/expanse/), 
 1. Clone this git repository
 
 ```
-git clone https://github.com/sbl-sdsc/df-parallel.git
+git clone https://github.com/mkandes/df-parallel.git
 ```
 
 
 2a. Run on CPU (Pandas, Dask, and Spark dataframes):
 ```
-galyleo launch --account <account_number> --partition shared --cpus 10 --memory 20 --time-limit 00:30:00 --conda-env df-parallel --conda-yml "${HOME}/df-parallel/environment.yml" --mamba
+galyleo launch --account abc123 --partition shared --cpus 10 --memory 20 --time-limit 00:30:00 --conda-yml "${HOME}/df-parallel/environment.yml" --cache --quiet
 ```
 
 2b. Run on GPU (required for cuDF and Dask-cuDF dataframes):
 ```
-galyleo launch --account <account_number> --partition gpu-shared --cpus 10 --memory 92 --gpus 1 --time-limit 00:30:00 --conda-env df-parallel-gpu --conda-yml "${HOME}/df-parallel/environment-gpu.yml" --mamba
+galyleo launch --account abc123 --partition gpu-shared --cpus 10 --memory 92 --gpus 1 --time-limit 00:30:00 --conda-yml "${HOME}/df-parallel/environment-gpu.yml" --cache --quiet
 ```
 
 ## Running the example notebooks

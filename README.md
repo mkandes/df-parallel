@@ -16,21 +16,19 @@ It compares parallel and out-of-core (data that are too large to fit into the co
 
 ## Running Jupyter Lab locally (CPU only)
 ------
-Prerequisites: Miniconda3 (light-weight, preferred) or Anaconda3 and Mamba
-
-* Install [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
-* Install Mamba: ```conda install mamba -n base -c conda-forge```
+Prerequisites: miniforge (light-weight, preferred)
+* Download and install [miniforge](https://conda-forge.org/download/)
 ------
 
 1. Clone this git repository
 
 ```
-git clone https://github.com/sbl-sdsc/df-parallel.git
+git clone https://github.com/mkandes/df-parallel.git
 ```
 2. Create CONDA environment
 
 ```
-mamba env create -f df-parallel/environment.yml
+conda env create -f df-parallel/environment.yml
 ```
 3. Activate the CONDA environment
 
